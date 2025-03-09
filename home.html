@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">MyApp</div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">🏠 Home</a></li>
+                    <li><a href="booking.html">📅 Booking Service</a></li>
+                    <li><a href="tracking.html">🚚 Tracking</a></li>
+                    <li><a href="previous-booking.html">📜 Previous Booking</a></li>
+                    <li><a href="support.html">☎ Contact Support</a></li>
+                </ul>
+            </nav>
+            <button id="logout">🚪 Logout</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+                <h1>Welcome, <span id="username">User</span></h1>
+                <p>Manage your bookings, track orders, and get support easily.</p>
+            </header>
+            <section class="dashboard">
+                <div class="box">
+                    <h2>New Booking</h2>
+                    <p>Schedule your package delivery.</p>
+                    <a href="booking.html" class="btn">Book Now</a>
+                </div>
+                <div class="box">
+                    <h2>Track Order</h2>
+                    <p>Check the real-time status of your shipment.</p>
+                    <a href="tracking.html" class="btn">Track Now</a>
+                </div>
+                <div class="box">
+                    <h2>Support</h2>
+                    <p>Need help? Contact our support team.</p>
+                    <a href="support.html" class="btn">Get Help</a>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

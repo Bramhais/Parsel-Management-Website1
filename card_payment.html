@@ -1,0 +1,67 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Payment - Parcel Express</title>
+    <link rel="stylesheet" href="payment.css">
+    <script defer src="payment.js"></script>
+    <script>
+        function processPayment(event) {
+            event.preventDefault(); // Prevent form submission refresh
+            alert("Payment successful!");
+
+            // Redirect to the invoice page
+            window.location.href = "../invoice.html"; // Update path if needed
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">Parcel Express</div>
+        <nav>
+            <ul>
+                <li><a href="../customerindex.html">Home</a></li>
+                <li><a href="../booking_service/booking.html">Booking Service</a></li>
+                <li><a href="#" id="logout">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="welcome">Welcome, <span id="username">User</span></div>
+    </header>
+
+    <main>
+        <section class="payment-form">
+            <h2>Credit/Debit Card Payment</h2>
+            
+            <form id="cardForm">
+                <div class="form-group">
+                    <label>Card Number:</label>
+                    <input type="text" id="cardNumber" maxlength="16" required>
+                </div>
+                <div class="form-group">
+                    <label>Card Holder Name:</label>
+                    <input type="text" id="cardHolderName" required>
+                </div>
+                <div class="form-group">
+                    <label>Expiry Date (MM/YY):</label>
+                    <input type="text" id="expiryDate" maxlength="5" placeholder="MM/YY" required>
+                </div>
+                <div class="form-group">
+                    <label>CVV:</label>
+                    <input type="password" id="cvv" maxlength="3" required>
+                </div>
+
+                <div class="buttons">
+                    <button onclick="processPayment(event)">Make Payment</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Parcel Express. All rights reserved.</p>
+    </footer>
+</body>
+</html>

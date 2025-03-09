@@ -1,0 +1,118 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1E1E2F; /* Deep Purple Background */
+    color: white;
+}
+
+/* Header Styling */
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a2e; /* Deep Navy Blue */
+    padding: 15px 30px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Logo */
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #f4a261; /* Gold */
+}
+
+/* Navigation Menu */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+/* Hover effect */
+nav ul li a:hover {
+    background-color: #f4a261; /* Gold */
+    color: black;
+}
+
+/* Welcome Message */
+.welcome {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* Pickup Scheduling Form */
+.pickup-form {
+    background: #2A2A40; /* Dark Greyish Purple */
+    padding: 20px;
+    margin: 30px auto;
+    width: 50%;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border-left: 5px solid #FFD700; /* Gold Border */
+}
+
+.pickup-form h1 {
+    text-align: center;
+    color: #FFD700; /* Gold Title */
+}
+
+/* Form Labels */
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: white;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #6A0DAD; /* Purple Border */
+    border-radius: 5px;
+    background-color: #3B3B58; /* Darker Background */
+    color: white;
+}
+
+/* Button Styling */
+button {
+    background: #003366; /* Gold Button */
+    color: black;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: greenyellow; /* Lighter Gold */
+}
+
+/* Message Styling */
+#message {
+    text-align: center;
+    color: #FF4C4C; /* Red Warning */
+    margin-top: 10px;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pickup Scheduling</title>
+    <link rel="stylesheet" href="shedule.css">
+    <script defer src="shedule.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">Parcel Express</div>
+        <nav>
+            <ul>
+                <li><a href="officerindex.html">Home</a></li>
+                <li><a href="tracking.html">Tracking</a></li>
+                <li><a href="./status/status.html">Delivery Status</a></li>
+                <li><a href="shedule.html">Pickup Scheduling</a></li>
+                <li><a href="histry.html">Previous Booking</a></li>
+                <li><a href="#" id="logout">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="welcome">Welcome, <span id="officerName">Officer</span></div>
+    </header>
+    
+    <main>
+        <section class="pickup-form">
+            <h1>Pickup Scheduling</h1>
+            <form id="pickupForm" onsubmit="return savePickupDetails()">
+                <label>Booking ID: <input type="text" id="bookingId" required pattern="\d{12}" title="Enter a valid 12-digit Booking ID"></label>
+                <button type="button" onclick="searchBooking()">Search</button>
+                
+                <div id="bookingDetails" style="display:none;">
+                    <p><strong>Customer Name:</strong> <span id="customerName"></span></p>
+                    <p><strong>Parcel Status:</strong> <span id="parcelStatus"></span></p>
+                    <label>Select Pickup Date: <input type="date" id="pickupDate" required></label>
+                    <label>Select Pickup Time: <input type="time" id="pickupTime" required></label>
+                    <button type="submit" class="btn">Save</button>
+                </div>
+            </form>
+            <p id="message"></p>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,261 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #eef2f7;
+    color: #333;
+    /* margin: 0; */
+    margin-top: 135px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+h1 {
+    color: whitesmoke;
+    margin-top: 10px;
+    margin-bottom: 5p;
+    text-align: center;
+    font-weight: bold;
+    font-size: 28px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    animation: moveText 3s infinite alternate ease-in-out;
+    cursor: pointer;
+}
+
+/* Hover Effect */
+h1:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Moving Animation */
+@keyframes moveText {
+    from {
+        transform: translateX(-10px);
+    }
+    to {
+        transform: translateX(10px);
+    }
+}
+
+/* Pop-up Border Effect */
+h1.pop-up {
+    box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
+    border: 3px solid white;
+}
+
+
+h2 {
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Header */
+header {
+    background: #002b66;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+    max-width: 150px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Booking Section */
+.booking-hero {
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(90deg, #2c3e50, #324a62);
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.booking-form-container {
+    background: white;
+    max-width: 600px;
+    width: 90%;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #002b66;
+    border-bottom: 3px solid #0055a5;
+    padding-bottom: 5px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.form-field {
+    flex: 1;
+    min-width: 180px;
+}
+
+.full-width {
+    flex: 100%;
+}
+
+/* Input & Select */
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #0055a5;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Shipping Options */
+.shipping-options {
+    display: flex;
+    justify-content: space-between;
+}
+
+.shipping-option {
+    background: #f0f8ff;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.shipping-option:hover,
+.shipping-option input:checked + label {
+    border-color: #002b66;
+    background: #cce0ff;
+}
+
+/* Price Summary */
+.price-summary {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+
+.price-row.total {
+    font-weight: bold;
+    font-size: 20px;
+    color: #002b66;
+}
+
+/* Buttons */
+.form-actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.btn.primary {
+    background: #121212;
+    color: white;
+}
+
+.btn.primary:hover {
+    background: #001a4d;
+}
+
+.btn.secondary {
+    background: #ccc;
+    color: #333;
+}
+
+.btn.secondary:hover {
+    background: #bbb;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 12px;
+    background: #002b66;
+    color: white;
+    font-size: 14px;
+    margin-top: 20px;
+    border-top: 3px solid #0055a5;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}

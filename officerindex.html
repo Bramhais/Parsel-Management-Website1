@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcel Booking</title>
+    <link rel="stylesheet" href="officer.css">
+    <script defer src="officer.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">Parcel Express</div>
+        <nav>
+            <ul>
+                <li><a href="officerindex.html">Home</a></li>
+                <li><a href="tracking.html">Tracking</a></li>
+                <li><a href="../officer/status/status.html">Delivery Status</a></li>
+                <li><a href="shedule.html">Pickup Scheduling</a></li>
+                <li><a href="histry.html">Previous Booking</a></li>
+                <li><a href="#" id="logout">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="welcome">Welcome, <span id="officerName">Officer</span></div>
+    </header>
+
+    <main>
+        <section class="booking-form">
+            <h1>Parcel Booking</h1>
+            <form id="parcelForm" onsubmit="return validateForm()">
+                <!-- Sender Information -->
+                <fieldset>
+                    <legend>Sender Information</legend>
+                    <label>Name: <input type="text" id="senderName" required pattern="[A-Za-z ]+" title="Only letters and spaces allowed"></label>
+                    <label>Address: <input type="text" id="senderAddress" required></label>
+                    <label>Contact: <input type="tel" id="senderContact" required pattern="[0-9]{10}" title="Enter a valid 10-digit phone number"></label>
+                </fieldset>
+
+                <!-- Receiver Information -->
+                <fieldset>
+                    <legend>Receiver Information</legend>
+                    <label>Name: <input type="text" id="receiverName" required pattern="[A-Za-z ]+" title="Only letters and spaces allowed"></label>
+                    <label>Address: <input type="text" id="receiverAddress" required></label>
+                    <label>Pin Code: <input type="text" id="receiverPin" required pattern="[0-9]{6}" title="Enter a valid 6-digit PIN code"></label>
+                    <label>Contact: <input type="tel" id="receiverContact" required pattern="[0-9]{10}" title="Enter a valid 10-digit phone number"></label>
+                </fieldset>
+
+                <!-- Parcel Details -->
+                <fieldset>
+                    <legend>Parcel Details</legend>
+                    <label>Size & Weight (kg): <input type="number" id="parcelSize" required min="0.1" step="0.1"></label>
+                    <label>Description: <input type="text" id="parcelDescription" required></label>
+                </fieldset>
+
+                <!-- Shipping Options -->
+                <fieldset>
+                    <legend>Shipping Options</legend>
+                    <label>
+                        Delivery Speed:
+                        <select id="deliverySpeed" onchange="calculateCost()">
+                            <option value="standard">Standard</option>
+                            <option value="express">Express</option>
+                        </select>
+                    </label>
+                    <label>
+                        Packaging:
+                        <select id="packaging" onchange="calculateCost()">
+                            <option value="standard">Standard</option>
+                            <option value="custom">Custom</option>
+                            <option value="eco">Eco-friendly</option>
+                            <option value="fragile">Fragile</option>
+                        </select>
+                    </label>
+                </fieldset>
+
+                <!-- Date & Time Selection -->
+                <fieldset>
+                    <legend>Pickup/Drop-off Time</legend>
+                    <label>Select Date: <input type="date" id="pickupDate" required></label>
+                    <label>Select Time: <input type="time" id="pickupTime" required></label>
+                </fieldset>
+
+                <!-- Cost & Payment -->
+                <fieldset>
+                    <legend>Payment</legend>
+                    <p id="costDisplay">Cost: $0.00</p>
+                    <label>
+                        Payment Method:
+                        <select id="paymentMethod">
+                            <option value="credit">Credit Card</option>
+                            <option value="paypal">PayPal</option>
+                            <option value="cash">Cash</option>
+                        </select>
+                    </label>
+                </fieldset>
+
+                <!-- Additional Services -->
+                <fieldset>
+                    <legend>Additional Services</legend>
+                    <label><input type="checkbox" id="insurance" onchange="calculateCost()"> Insurance</label>
+                    <label><input type="checkbox" id="trackingService" onchange="calculateCost()"> Tracking</label>
+                </fieldset>
+
+                <button type="submit" class="btn">Submit Booking</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        function validateForm() {
+            const senderName = document.getElementById('senderName').value.trim();
+            const receiverName = document.getElementById('receiverName').value.trim();
+            const senderContact = document.getElementById('senderContact').value.trim();
+            const receiverContact = document.getElementById('receiverContact').value.trim();
+            const receiverPin = document.getElementById('receiverPin').value.trim();
+            
+            if (!/^[A-Za-z ]+$/.test(senderName) || !/^[A-Za-z ]+$/.test(receiverName)) {
+                alert("Names should contain only letters and spaces.");
+                return false;
+            }
+            
+            if (!/^\d{10}$/.test(senderContact) || !/^\d{10}$/.test(receiverContact)) {
+                alert("Enter a valid 10-digit contact number.");
+                return false;
+            }
+            
+            if (!/^\d{6}$/.test(receiverPin)) {
+                alert("Enter a valid 6-digit PIN code.");
+                return false;
+            }
+            
+            return true;
+        }
+
+        function calculateCost() {
+            let baseCost = 10;
+            let parcelSize = parseFloat(document.getElementById("parcelSize").value) || 0;
+            let deliverySpeed = document.getElementById("deliverySpeed").value;
+            let packaging = document.getElementById("packaging").value;
+            let insurance = document.getElementById("insurance").checked;
+            let trackingService = document.getElementById("trackingService").checked;
+
+            if (parcelSize > 0) {
+                baseCost += parcelSize * 2; // $2 per kg
+            }
+            if (deliverySpeed === "express") {
+                baseCost += 15; // Express costs extra
+            }
+            if (packaging === "custom") {
+                baseCost += 5;
+            } else if (packaging === "eco") {
+                baseCost += 3;
+            } else if (packaging === "fragile") {
+                baseCost += 7;
+            }
+            if (insurance) {
+                baseCost += 10;
+            }
+            if (trackingService) {
+                baseCost += 5;
+            }
+
+            document.getElementById("costDisplay").innerText = "Cost: $" + baseCost.toFixed(2);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+/* Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: white;
+}
+
+/* Layout */
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00d4ff;
+    margin-bottom: 30px;
+}
+
+nav ul {
+    list-style: none;
+    width: 100%;
+}
+
+nav ul li {
+    width: 100%;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 15px 20px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background: #00d4ff;
+    color: black;
+    box-shadow: 0 0 10px #00d4ff;
+}
+
+/* Logout Button */
+#logout {
+    margin-top: auto;
+    width: 90%;
+    padding: 12px;
+    background: red;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+#logout:hover {
+    background: darkred;
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+    text-align: center;
+}
+
+/* Welcome Header */
+header h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #00d4ff;
+}
+
+header p {
+    font-size: 18px;
+    color: #ddd;
+}
+
+/* Dashboard Grid */
+/* Center the dashboard section */
+.dashboard {
+    display: flex;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;      /* Center vertically */
+    flex-wrap: wrap;          /* Ensure responsiveness */
+    min-height: 60vh;         /* Adjust height to position at center */
+    gap: 20px;
+}
+
+/* Adjust box styles */
+.box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 250px;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.8);
+}
+
+/* Button Styles */
+.box .btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    font-size: 16px;
+    background: #00d4ff;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.box .btn:hover {
+    background: #0099cc;
+    color: white;
+    box-shadow: 0 0 10px #0099cc, 0 0 20px #0099cc;
+}
+
+
+.box h2 {
+    color: #00d4ff;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.box p {
+    font-size: 14px;
+    color: #ddd;
+}
+
+.box .btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    font-size: 16px;
+    background: #00d4ff;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.box .btn:hover {
+    background: #0099cc;
+    color: white;
+    box-shadow: 0 0 10px #0099cc, 0 0 20px #0099cc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 70px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+        padding: 10px;
+        justify-content: center;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,214 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Dark background */
+    color: #EAEAEA; /* Light text for contrast */
+}
+/* Navigation Bar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a2e; /* Deep Navy Blue */
+    padding: 15px 30px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Logo */
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #f4a261; /* Gold */
+}
+
+/* Navigation Menu */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+/* Hover effect */
+nav ul li a:hover {
+    background-color: #f4a261; /* Gold */
+    color: black;
+    box-shadow: 0 0 10px #f4a261, 0 0 20px #f4a261;
+}
+
+/* Welcome Message */
+.welcome {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        padding: 10px;
+    }
+}
+
+/* Main Section */
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #1E1E2F; /* Deep Grey-Blue */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+}
+
+/* Status Section */
+.status-section {
+    text-align: center;
+}
+
+.status-section h1 {
+    color: #FFD700; /* Gold */
+    margin-bottom: 20px;
+}
+
+/* Search Box */
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.search-box input {
+    padding: 10px;
+    width: 250px;
+    border: 2px solid #00C6CF; /* Bright Cyan */
+    border-radius: 5px;
+    background-color: #222;
+    color: white;
+    font-size: 16px;
+}
+
+.search-box button {
+    background-color: #00C6CF; /* Bright Cyan */
+    color: black;
+    font-weight: bold;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-box button:hover {
+    background-color: #FFD700; /* Gold */
+    color: black;
+}
+
+/* Status Result */
+#statusResult {
+    text-align: left;
+    background-color: #003366; /* Midnight Blue */
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+/* Status Update Container */
+#statusUpdateContainer {
+    margin: 25px 0;
+    padding: 15px;
+    background-color: #002244; /* Darker Blue */
+    border-radius: 5px;
+    text-align: center;
+}
+
+#statusSelect {
+    padding: 10px;
+    margin-right: 10px;
+    background-color: #222;
+    color: white;
+    border: 2px solid #00C6CF; /* Cyan Border */
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#updateStatusBtn {
+    background-color: #00C6CF; /* Cyan */
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#updateStatusBtn:hover {
+    background-color: #FFD700; /* Gold */
+    color: black;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    background-color: #222; /* Dark Table Background */
+    color: white;
+}
+
+table, th, td {
+    border: 1px solid #00C6CF; /* Cyan Border */
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #003366; /* Midnight Blue */
+    color: white;
+    font-size: 16px;
+}
+
+tbody tr:hover {
+    background-color: #002244; /* Darker Blue */
+}
+
+/* Status colors */
+.status-picked-up {
+    color: #FFA500; /* Orange */
+}
+
+.status-in-transit {
+    color: #00C6CF; /* Cyan */
+}
+
+.status-delivered {
+    color: #32CD32; /* Bright Green */
+}
+
+.status-returned {
+    color: #FF4D4D; /* Red */
+}

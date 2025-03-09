@@ -1,0 +1,163 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1E1E2F; /* Deep Purple */
+    color: white;
+}
+
+/* Navigation Bar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a2e; /* Deep Navy Blue */
+    padding: 15px 30px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Logo */
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #f4a261; /* Gold */
+}
+
+/* Navigation Menu */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+/* Hover effect */
+nav ul li a:hover {
+    background-color: #f4a261; /* Gold */
+    color: black;
+    box-shadow: 0 0 10px #f4a261, 0 0 20px #f4a261;
+}
+
+/* Welcome Message */
+.welcome {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        padding: 10px;
+    }
+}
+
+
+
+
+/* Main Section */
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #2A2A40; /* Dark Greyish Blue */
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+/* Tracking Section */
+.tracking-section {
+    text-align: center;
+}
+
+.tracking-section h1 {
+    color: #FFD700; /* Gold */
+}
+
+/* Search Box */
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #FFD700; /* Gold Border */
+    border-radius: 5px;
+    background-color: #3B3B58; /* Dark Background */
+    color: white;
+}
+
+.search-box button {
+  background-color: #b16910; /* Midnight Blue */
+    ; /* Vibrant Teal */
+    color: black;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.search-box button:hover {
+    background-color: #94D2BD; /* Lighter Teal */
+}
+
+/* Status Result */
+#statusResult {
+    text-align: left;
+    background-color: #003366; /* Deep Teal */
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    /* background: #003366; */
+}
+
+table, th, td {
+    border: 1px solid #FFD700; /* Gold Border */
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: hsl(54, 74%, 63%); /* Midnight Blue */
+
+    color: white;
+}
+
+tbody tr:hover {
+    background-color: royalblue; /* Vibrant Teal */
+}

@@ -1,0 +1,105 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: white;
+}
+
+/* Navbar styling */
+header {
+    background-color: #1E3A8A; /* Deep Blue */
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #FACC15; /* Yellow Accent */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #FACC15; /* Yellow Hover */
+}
+
+/* Invoice Box */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Centers vertically */
+}
+
+.invoice {
+    background-color: #1F2937; /* Dark Grey */
+    padding: 30px;
+    width: 450px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    border-left: 5px solid #FACC15; /* Yellow Border */
+}
+
+/* Invoice Title */
+.invoice h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #FACC15; /* Yellow Title */
+}
+
+/* Invoice Details */
+.invoice p {
+    font-size: 16px;
+    color: #D1D5DB; /* Light Grey */
+    margin: 10px 0;
+    text-align: left;
+}
+
+/* Bold Labels */
+.invoice p strong {
+    color: white;
+}
+
+/* Print Button */
+.btn {
+    margin-top: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    background-color: #FACC15; /* Yellow Button */
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #FFD700; /* Brighter Yellow */
+}

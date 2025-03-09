@@ -1,0 +1,154 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body */
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Dark Blue Gradient */
+    color: white;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a2e; /* Deep Navy Blue */
+    padding: 15px 30px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Logo */
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #f4a261; /* Gold */
+}
+
+/* Navigation Menu */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+/* Hover effect */
+nav ul li a:hover {
+    background-color: #f4a261; /* Gold */
+    color: black;
+}
+
+/* Welcome Message */
+.welcome {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Booking Form */
+.booking-form {
+    width: 50%;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.1); /* Glassmorphism Effect */
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Form Header */
+.booking-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #f4a261; /* Gold */
+}
+
+/* Fieldset */
+fieldset {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #f4a261; /* Gold Border */
+    border-radius: 8px;
+}
+
+/* Legend */
+legend {
+    font-weight: bold;
+    color: yellow; /* Gold */
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: white;
+}
+
+/* Inputs & Select */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #f4a261; /* Gold Border */
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: black;
+}
+
+/* Placeholder Color */
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Submit Button */
+.btn {
+    display: block;
+    width: 100%;
+    background: #f4a261; /* Gold */
+    color: black;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #e69a4b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .booking-form {
+        width: 90%;
+    }
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label>User ID:</label>
+            <input type="text" id="loginUserID" required>
+
+            <label>Password:</label>
+            <input type="password" id="loginPassword" required>
+            <span class="toggle-password" onclick="togglePassword()">👁</span>
+
+            <div class="login-buttons">
+                <button type="button" class="btn user-btn" onclick="loginAsUser()">Login as User</button>
+                <button type="button" class="btn officer-btn" onclick="loginAsOfficer()">Login as Officer</button>
+            </div>
+
+            <p>Don't have an account? <a href="register.html">Sign Up</a></p>
+        </form>
+        <p id="errorMessage" style="color: red;"></p>
+    </div>
+</body>
+</html>

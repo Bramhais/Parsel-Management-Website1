@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking History</title>
+    <style>
+        /* General Page Styling */
+        body {
+            background: linear-gradient(135deg, #1a1a1a, #000);
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 0;
+            padding-top: 0px; /* Offset for fixed header */
+        }
+
+        /* Header Styling */
+      
+/* Header */
+header {
+    margin: 0px;
+    margin-top: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a2e; /* Deep Navy Blue */
+    padding: 15px 30px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Logo */
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #f4a261; /* Gold */
+}
+
+/* Navigation Menu */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+/* Hover effect */
+nav ul li a:hover {
+    background-color: #f4a261; /* Gold */
+    color: black;
+}
+
+/* Welcome Message */
+.welcome {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        padding: 10px;
+    }
+}
+
+
+
+        /* History Container */
+        .history-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+            background: black;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            color: white;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #003366;
+        }
+
+        th {
+            background-color: #003366;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: gray;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination button {
+            background-color: #193819;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .pagination button:hover {
+            background-color: #c9da11;
+            color: black;
+        }
+
+        .pagination button:disabled {
+            background-color: #003366;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Parcel Express</div>
+        <nav>
+            <ul>
+                <li><a href="officerindex.html" class="nav-link">Home</a></li>
+                <li><a href="tracking.html" class="nav-link">Tracking</a></li>
+                <li><a href="./status/status.html" class="nav-link">Delivery Status</a></li>
+                <li><a href="shedule.html" class="nav-link">Pickup Scheduling</a></li>
+                <li><a href="histry.html" class="nav-link">Previous Booking</a></li>
+                <li><a href="#" id="logout" class="nav-link">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="welcome">Welcome, <span id="officerName">Officer</span></div>
+    </header>
+
+    <main>
+        <div class="history-container">
+            <h1 style="text-align: center; color: #978d1e;">Booking History</h1>
+            
+            <table id="bookingTable">
+                <thead>
+                    <tr>
+                        <th>Customer ID</th>
+                        <th>Booking ID</th>
+                        <th>Booking Date</th>
+                        <th>Receiver Name</th>
+                        <th>Delivered Address</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="bookingTableBody"></tbody>
+            </table>
+
+            <div class="pagination">
+                <button id="prevPage" onclick="changePage(-1)" disabled>Previous</button>
+                <span id="pageInfo">Page 1 of 1</span>
+                <button id="nextPage" onclick="changePage(1)">Next</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Highlight active navigation link
+        document.addEventListener("DOMContentLoaded", function() {
+            let navLinks = document.querySelectorAll(".nav-link");
+            let currentPage = window.location.pathname.split("/").pop();
+
+            navLinks.forEach(link => {
+                if (link.getAttribute("href") === currentPage) {
+                    link.classList.add("active");
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener("click", function() {
+                    navLinks.forEach(l => l.classList.remove("active"));
+                    this.classList.add("active");
+                });
+            });
+        });
+
+        let bookingData = [...Array(10).keys()].map(i => ({
+            customerId: `CUST00${i + 1}`,
+            bookingId: `BK978${i}`,
+            bookingDate: `2025-02-${10 + i}`,
+            receiverName: `Customer ${i + 1}`,
+            deliveredAddress: `Address ${i + 1}`,
+            amount: (30 + i * 5).toFixed(2),
+            status: i % 3 === 0 ? "Delivered" : i % 3 === 1 ? "In Transit" : "Pending"
+        }));
+
+        let currentPage = 1, rowsPerPage = 5, filteredData = [...bookingData];
+
+        function updateTable() {
+            let tableBody = document.getElementById('bookingTableBody');
+            tableBody.innerHTML = "";
+            let start = (currentPage - 1) * rowsPerPage, end = start + rowsPerPage;
+            filteredData.slice(start, end).forEach(b => {
+                let row = `<tr>
+                    <td>${b.customerId}</td><td>${b.bookingId}</td><td>${b.bookingDate}</td>
+                    <td>${b.receiverName}</td><td>${b.deliveredAddress}</td>
+                    <td>$${b.amount}</td><td>${b.status}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+
+            document.getElementById('prevPage').disabled = currentPage === 1;
+            document.getElementById('nextPage').disabled = currentPage >= Math.ceil(filteredData.length / rowsPerPage);
+        }
+
+        function changePage(dir) { currentPage += dir; updateTable(); }
+
+        updateTable();
+    </script>
+</body>
+</html>

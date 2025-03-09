@@ -1,0 +1,159 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Full-page background */
+body {
+    background: linear-gradient(135deg, #121212, #1b2028);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px; /* Adds spacing around the form */
+}
+
+/* Form Container */
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    width: 420px;
+    text-align: center;
+    margin: 10px; /* Adds spacing on all sides */
+    border: 3px solid hsl(0, 16%, 71%); /* Makes form boundaries clearly visible */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Form Heading */
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* Form Fields */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    text-align: left;
+    font-weight: 600;
+    color: #555;
+    width: 100%;
+    margin-bottom: 0px;
+    font-size: 14px;
+}
+
+/* Input Fields */
+input, select {
+    padding: 12px;
+    width: 100%;
+    margin-bottom: 7px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out;
+    background: #f9f9f9;
+}
+
+/* Focus Effect */
+input:focus, select:focus {
+    border-color: #2575fc;
+    outline: none;
+    background: #fff;
+}
+
+/* Mobile Number Group */
+.mobile-group {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+select {
+    width: 30%;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+    font-weight: bold;
+    color: white;
+    margin-top: 5px;
+}
+
+/* Button Colors */
+.user-btn {
+    background: #28a745;
+}
+
+.officer-btn {
+    background: hsl(240, 4%, 5%);
+}
+
+button[type="reset"] {
+    background: #ffc107;
+    color: #333;
+}
+
+button[type="submit"] {
+    background: #ff4b5c;
+}
+
+/* Button Hover Effects */
+button:hover {
+    opacity: 0.8;
+}
+
+/* Password Toggle */
+.toggle-password {
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Links */
+p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+p a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #ff4b5c;
+    transition: 0.3s ease-in-out;
+}
+
+p a:hover {
+    text-decoration: underline;
+}

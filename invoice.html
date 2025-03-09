@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <link rel="stylesheet" href="invoice.css">
+    <script defer src="invoice.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">Parcel Express</div>
+        <nav>
+            <ul>
+                <li><a href="officerindex.html">Home</a></li>
+                <li><a href="tracking.html">Tracking</a></li>
+                <li><a href="./status/status.html">Delivery Status</a></li>
+                <li><a href="shedule.html">Pickup Scheduling</a></li>
+                <li><a href="histry.html">Previous Booking</a></li>
+                <li><a href="#" id="logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="invoice">
+            <h1>Invoice</h1>
+            <p><strong>Receiver Name:</strong> <span id="receiverName"></span></p>
+            <p><strong>Receiver Address:</strong> <span id="receiverAddress"></span></p>
+            <p><strong>Receiver PIN:</strong> <span id="receiverPin"></span></p>
+            <p><strong>Receiver Mobile:</strong> <span id="receiverMobile"></span></p>
+            <p><strong>Parcel Weight (g):</strong> <span id="parcelWeight"></span></p>
+            <p><strong>Parcel Contents:</strong> <span id="parcelContents"></span></p>
+            <p><strong>Delivery Type:</strong> <span id="deliveryType"></span></p>
+            <p><strong>Packing Preference:</strong> <span id="packingPreference"></span></p>
+            <p><strong>Pickup Time:</strong> <span id="pickupTime"></span></p>
+            <p><strong>Dropoff Time:</strong> <span id="dropoffTime"></span></p>
+            <p><strong>Service Cost:</strong> $<span id="serviceCost"></span></p>
+            <p><strong>Payment Time:</strong> <span id="paymentTime"></span></p>
+
+            <button onclick="window.print()" class="btn">Print Invoice</button>
+        </section>
+    </main>
+</body>
+</html>
